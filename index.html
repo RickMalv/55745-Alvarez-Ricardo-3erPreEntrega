@@ -35,11 +35,15 @@
               </ul> 
         </div>
     </nav>
-    <div id="container" class="flex flex-col w-[100%] h-screen gap-6">
+    <div id="container" class="flex flex-col w-[100%] h-screen gap-6 md:flex-row ">
         <div id="canvas-container" class="flex-1"></div>
-        <div id="text-container" class="flex flex-col flex-1 text-center gap-6">
-            <p>Nueva Pokedex</p>
-            <button> Empezar Aventura</button>
+        <div id="text-container" class="flex flex-col flex-1 text-center gap-6 md:place-content-center justify-center">
+            <h1>¡Bienvenido al mundo Pokémon! Descubre criaturas asombrosas, resuelve misterios y libra batallas épicas. ¿Listo para comenzar la aventura?</h1>
+            <div class="flex place-items-center justify-center">
+                <img class="w-8 h-6 pl-2 animate-bounce" src="./src/img/arrow-right.png" alt="arrow">
+                <button class="bg-red-600 text-white block w-max p-4 rounded-md "> Empezar Aventura</button>
+                <img class="w-8 h-6 animate-bounce pr-2 " src="./src/img/arrow-left.png" alt="arrow">
+            </div>
         </div>
     </div>
     <script type="module" src="main.js"></script>
