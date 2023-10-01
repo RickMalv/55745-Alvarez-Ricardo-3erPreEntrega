@@ -51,7 +51,7 @@ const ambientLight = new THREE.AmbientLight(0xffffff, 1); // Ajusta la intensida
 scene.add(ambientLight);
 
 
-const loader = new GLTFLoader().setPath('./img/pokedex/');
+const loader = new GLTFLoader().setPath('./src/img/pokedex/');
 loader.load('scene.gltf', (gltf) => {
   const mesh = gltf.scene;
 
