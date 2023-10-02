@@ -8,8 +8,8 @@ module.exports = {
         "principal": ["'Press Start 2P'",'sans-serif']
       },
       backgroundImage: {
-        "close-menu": "url('../img/close.png')",
-        "open-menu": "url('../img/open.png')"
+        "close-menu": "url('../img/close.svg')",
+        "open-menu": "url('../img/open.svg')"
       }
     },
   },

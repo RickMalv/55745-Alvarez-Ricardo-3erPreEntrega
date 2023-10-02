@@ -18,25 +18,24 @@
         }
     </script>
 </head>
-<body class="font-principal dark:bg-slate-950 dark:text-white ">
+<body class="font-principal dark:bg-slate-950 dark:text-white dark:fill-white ">
     <div class="sticky top-0">
-        <nav class="h-20 w-[90%] mx-auto flex overflow-hidden items-center justify-between">
+        <nav class="h-20 w-[90%] mx-auto flex overflow-hidden items-center justify-between dark:fill-white">
             <a class="w-1/3 max-w-[140px]" href="#">
                 <img class="w-full" src="./src/img/Logo.webp" alt="Pokemon">
             </a>
             <input type="checkbox" id="menu" class="peer hidden">
-            <label for="menu" class="bg-open-menu w-6 h-5 bg-cover bg-center cursor-pointer peer-checked:bg-close-menu transition-transform z-50 md:hidden"></label>
-    
+            <label for="menu" class="bg-open-menu w-6 h-6 bg-cover bg-center cursor-pointer peer-checked:bg-close-menu transition-transform z-50 md:hidden red"></label>
             <div class="fixed inset-0 z-40 bg-gradient-to-b from-white/70 to-black/70 translate-x-full peer-checked:translate-x-0 transition-all md:static md:bg-none md:translate-x-0">
-                <ul class=" absolute inset-x-0 top-24 p-12 bg-white w-[90%] mx-auto rounded-md h-max text-center grid items-center gap-6 shadow-2xl md:shadow-none md:w-max md:bg-transparent md:p-0 md:grid-flow-col md:static">
+                <ul class=" absolute inset-x-0 top-24 p-12 bg-white w-[90%] mx-auto rounded-md h-max text-center grid items-center gap-6 shadow-2xl md:shadow-none md:w-max md:bg-transparent md:p-0 md:grid-flow-col md:static dark:bg-slate-950">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Pokédex</a></li>
                     <li><a href="#">Tienda</a></li>
                     <li><a href="#">Carrito</a></li> 
-                    <div class="flex justify-center items-center">
+                    <div class="flex justify-around items-center">
                         <span class="md:hidden">Cambiar tema</span>
                         <img class="w-[50px] object-cover moon" src="./src/img/lunatone.webp" alt="moon">
-                        <img class="w-[80px] object-cover sun" src="./src/img/sun.png" alt="sun">
+                        <img class="w-[50px] object-cover sun" src="./src/img/solrock.webp" alt="sun">
                     </div> 
                   </ul>
             </div>
