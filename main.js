@@ -12,7 +12,6 @@ const width = canvasContainer.clientWidth;
 const height = canvasContainer.clientHeight;
 
 renderer.setSize(width, height);
-// renderer.setSize(window.innerWidth, window.innerHeight); original que funciona
 renderer.setClearColor(0x000000);
 renderer.setPixelRatio(window.devicePixelRatio);
 
@@ -20,7 +19,6 @@ renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
 canvasContainer.appendChild(renderer.domElement);
-// document.body.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff); // Color blanco
@@ -47,7 +45,7 @@ spotLight.castShadow = true;
 spotLight.shadow.bias = -0.0001;
 scene.add(spotLight);
 
-const ambientLight = new THREE.AmbientLight(0xffffff, 1); // Ajusta la intensidad según tus necesidades
+const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambientLight);
 
 
