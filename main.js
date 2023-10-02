@@ -12,7 +12,7 @@ const width = canvasContainer.clientWidth;
 const height = canvasContainer.clientHeight;
 
 renderer.setSize(width, height);
-renderer.setClearColor(0x000000);
+renderer.setClearColor(0x000000,0);
 renderer.setPixelRatio(window.devicePixelRatio);
 
 renderer.shadowMap.enabled = true;
@@ -21,8 +21,6 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 canvasContainer.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xffffff); // Color blanco
-
 
 const camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
 camera.position.set(0, 0, 0);
