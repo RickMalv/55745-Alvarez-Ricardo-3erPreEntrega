@@ -67,7 +67,7 @@ const renderCart = ()=>{
     const pokemons = obtainCartLS();
     let contentHTML = "";
     pokemons.forEach(pokemon => {
-        contentHTML += `<div class="flex place-items-center justify-between">
+        contentHTML += `<div class="flex flex-col md:flex-row place-items-center justify-between">
         <img src=${pokemon.image} alt=${pokemon.name}>
         <h2>${pokemon.name}</h2>
         <button class="bg-red-600 text-white block w-max p-4 rounded-md" onClick="">Eliminar</button>
