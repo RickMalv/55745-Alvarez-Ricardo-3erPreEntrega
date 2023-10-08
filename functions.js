@@ -30,7 +30,7 @@ const renderPokemons = ()=>{
         <img src=${pokemon.image} alt=${pokemon.name}>
         <h2>${pokemon.name}</h2>
         <p>Price: ${pokemon.price} </p>
-        <button class="bg-red-600 text-white block w-max p-4 rounded-md" onClick="addToCart(${pokemon.id})">Agregar +</button>
+        <button class="bg-red-600 text-white block w-max p-2 rounded-md" onClick="addToCart(${pokemon.id})">Agregar +</button>
     </div>
         `      
     });
@@ -54,27 +54,33 @@ const searchPokemon = (id)=>{
 const addToCart = (id)=>{
    const cart = obtainCartLS();
    const pokemon = searchPokemon(id);
-   cart.push(pokemon);
+    if(isInCart(id)){
+        const existingPokemon = cart.find(pokemon=> pokemon.id === id);
+        existingPokemon.quantity++;
+    } else{
+        pokemon.quantity = 1;
+        cart.push(pokemon);
+    }
+  
    saveCartLS(cart);
    renderCartQuantity();   
 }
 
 
 const isInCart = (id) => {
-    const pokemons = loadPokemonsLS();
+    const pokemons = obtainCartLS();
     return pokemons.some(item=> item.id === id);
 } 
 
 const cartQuantity = ()=>{
     const cart = obtainCartLS();
-    return cart.length
+    return cart.reduce((total, pokemon)=> total += pokemon.quantity,0);
 }
 
 
 const cartTotalPrice = ()=>{
     const cart = obtainCartLS();
-    console.log(cart);
-    return cart.reduce((total, pokemon)=> total += pokemon.price,0);
+    return cart.reduce((total, pokemon)=> total += pokemon.price*pokemon.quantity,0);
 }
 
 const renderCartQuantity = ()=>{
@@ -84,31 +90,47 @@ const renderCartQuantity = ()=>{
 
 const renderCart = ()=>{
     const pokemons = obtainCartLS();
-    let contentHTML = "";
-    pokemons.forEach(pokemon => {
-    contentHTML += `<table >
-        <tbody>
-            <tr class="grid grid-cols-1 md:grid-cols-4 place-items-center gap-4">
-            <td><img class="m-auto " src=${pokemon.image} alt=${pokemon.name}></td>
-            <td>${pokemon.name}</td>
-            <td>$${pokemon.price}</td>
-            <td><button class="bg-red-600 text-white text-center p-4 rounded-md" onClick="deleteToCart(${pokemon.id})">Eliminar</button></td>
-            </tr>
-        </tbody>
-    </table>
-    `      
-});
-    contentHTML += `<table>
-    <tbody>
-        <tr class="grid grid-cols-4 place-items-center">
-        <td></td>
-        <td class="col-span-1">Total</td>
-        <td>$${cartTotalPrice()}</td>
-        <td></td>
-        </tr>
-    </tbody>
-    </table>`;
-
+    let contentHTML = `<table> `;
+    if (cartQuantity()>0){
+        pokemons.forEach(pokemon => {
+            contentHTML += `
+                <tbody>
+                    <tr class="grid grid-cols-1 md:grid-cols-6 place-items-center gap-4">
+                    <td><img class="m-auto " src=${pokemon.image} alt=${pokemon.name}></td>
+                    <td>${pokemon.name}</td>
+                    <td>x${pokemon.quantity}</td>
+                    <td>$${pokemon.price}</td>
+                    <td>$${pokemon.price*pokemon.quantity}</td>
+                    <td><button class="bg-red-600 text-white text-center p-2 rounded-md" onClick="deleteFromCart(${pokemon.id})">Eliminar</button></td>
+                    </tr>
+                </tbody>
+            `      
+        });
+            contentHTML += `
+            <tbody>
+                <tr class="grid grid-cols-6 place-items-center gap-4 mt-4">    
+                <td class="col-span-4">Total</td>
+                <td>$${cartTotalPrice()}</td>
+                <td></td>
+                </tr>
+            </tbody>
+            </table>`;
+    } else {
+        contentHTML = `<div class="w-[50%] mx-auto text-center">
+        <div>¡Parece que no hay nadie por aquí, regresa a la tienda y elige tu pokémon favorito!</div>
+        <a class="mx-auto mt-4 bg-red-600 text-white block w-max p-4 rounded-md" href="store.html">Tienda</a>
+        </div>
+        `
+    }
+    
     document.getElementById("cart").innerHTML = contentHTML;
 }
 
+const deleteFromCart = (id)=>{
+    const cart = obtainCartLS();
+    const newCart = cart.filter(pokemon => pokemon.id !==id );
+    saveCartLS(newCart);
+    renderCart();
+    renderCartQuantity();
+
+}
