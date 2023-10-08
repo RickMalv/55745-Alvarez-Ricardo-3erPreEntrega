@@ -1,2 +1,3 @@
 savePokemonsLS(pokemons);
 renderPokemons();
+renderCartQuantity();

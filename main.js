@@ -82,3 +82,4 @@ function onWindowResize() {
   
 
 animate();
+renderCartQuantity();

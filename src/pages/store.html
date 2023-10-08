@@ -19,30 +19,33 @@
     </script>
 </head>
 <body class="font-principal dark:bg-slate-950 dark:text-white">
-    <div class="sticky top-0">
-        <nav class="h-20 w-[90%] mx-auto flex overflow-hidden items-center justify-between md:static bg-white dark:bg-slate-950">
-            <a class="w-1/3 max-w-[140px]" href="#">
+    <div class="sticky top-0  dark:bg-slate-950 dark:text-white">
+        <nav class="h-20 w-[90%] mx-auto flex overflow-hidden items-center justify-between bg-white dark:bg-slate-950">
+            <a class="w-1/3 max-w-[140px]" href="../../index.html">
                 <img class="w-full" src="../img/Logo.webp" alt="Pokemon">
             </a>
             <input type="checkbox" id="menu" class="peer hidden">
             <label for="menu" class="bg-open-menu w-6 h-6 bg-cover bg-center cursor-pointer peer-checked:bg-close-menu transition-transform z-50 md:hidden dark:invert"></label>
             <div class="fixed inset-0 z-40 bg-gradient-to-b from-white/70 to-black/70 translate-x-full peer-checked:translate-x-0 transition-all md:static md:bg-none md:translate-x-0">
-                <ul class=" absolute inset-x-0 top-24 p-12 bg-white w-[90%] mx-auto rounded-md h-max text-center grid items-center gap-6 shadow-2xl md:shadow-none md:w-max md:bg-transparent md:p-0 md:grid-flow-col md:static dark:bg-slate-950 ">
-                    <li><a href="../../index.html">Home</a></li>
+                <ul class=" absolute inset-x-0 top-24 p-12  w-[90%] bg-white mx-auto rounded-md h-max justify-items-center grid items-center gap-6 shadow-2xl md:shadow-none md:w-max md:bg-transparent md:p-0 md:grid-flow-col md:static dark:bg-slate-950">
                     <li><a href="#">Pokédex</a></li>
-                    <li><a href="./store.html">Tienda</a></li>
-                    <li><a href="./cart.html">Carrito</a></li> 
-                    <div class="flex justify-around items-center">
-                        <span class="md:hidden">Cambiar tema</span>
-                        <img class="w-[50px] object-cover moon" src="../img/lunatone.webp" alt="moon">
-                        <img class="w-[50px] object-cover sun" src="../img/solrock.webp" alt="sun">
+                    <li><a href="../pages/store.html">Tienda</a></li>
+                    <li><a href="../pages/cart.html">Carrito</a></li>
+                    <li>
+                        <div class="bg-red-600 rounded-full w-9 h-9 flex justify-center items-center">
+                            <span class="text-center" id="totalCartQuantity"></span>
+                        </div>
+                    </li>
+                    <div class="flex items-center">
+                            <span class="md:hidden">Cambiar tema</span>
+                            <img class="w-[50px] object-cover moon" src="../img/lunatone.webp" alt="moon">
+                            <img class="w-[50px]  object-cover sun" src="../img/solrock.webp" alt="sun">
                     </div> 
-                  </ul>
-            </div>
+                </ul>
+            </div>     
         </nav>
     </div>
-    <div id="products" class="w-[90%] mx-auto grid md:grid-cols-5 gap-6 justify-center">
-    </div>
+    <div id="products" class="w-[90%] mx-auto grid md:grid-cols-4 gap-6 justify-center"></div>
     <script src="../../dark-theme.js"></script>
     <script src="../../functions.js"></script>
     <script src="../../store.js"></script>

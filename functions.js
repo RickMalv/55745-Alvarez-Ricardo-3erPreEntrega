@@ -26,7 +26,7 @@ const renderPokemons = ()=>{
     const pokemons = loadPokemonsLS();
     let contentHTML = "";
     pokemons.forEach(pokemon => {
-        contentHTML += `<div class="flex flex-col place-items-center justify-center">
+        contentHTML += `<div class="flex flex-col place-items-center justify-center gap-4">
         <img src=${pokemon.image} alt=${pokemon.name}>
         <h2>${pokemon.name}</h2>
         <p>Price: ${pokemon.price} </p>
@@ -55,24 +55,60 @@ const addToCart = (id)=>{
    const cart = obtainCartLS();
    const pokemon = searchPokemon(id);
    cart.push(pokemon);
-   saveCartLS(cart);   
+   saveCartLS(cart);
+   renderCartQuantity();   
 }
+
 
 const isInCart = (id) => {
     const pokemons = loadPokemonsLS();
     return pokemons.some(item=> item.id === id);
 } 
 
+const cartQuantity = ()=>{
+    const cart = obtainCartLS();
+    return cart.length
+}
+
+
+const cartTotalPrice = ()=>{
+    const cart = obtainCartLS();
+    console.log(cart);
+    return cart.reduce((total, pokemon)=> total += pokemon.price,0);
+}
+
+const renderCartQuantity = ()=>{
+    let totalCartQuantity = document.getElementById("totalCartQuantity");
+    totalCartQuantity.innerHTML = cartQuantity();
+}
+
 const renderCart = ()=>{
     const pokemons = obtainCartLS();
     let contentHTML = "";
     pokemons.forEach(pokemon => {
-        contentHTML += `<div class="flex flex-col md:flex-row place-items-center justify-between">
-        <img src=${pokemon.image} alt=${pokemon.name}>
-        <h2>${pokemon.name}</h2>
-        <button class="bg-red-600 text-white block w-max p-4 rounded-md" onClick="">Eliminar</button>
-    </div>
-        `      
-    });
+    contentHTML += `<table >
+        <tbody>
+            <tr class="grid grid-cols-1 md:grid-cols-4 place-items-center gap-4">
+            <td><img class="m-auto " src=${pokemon.image} alt=${pokemon.name}></td>
+            <td>${pokemon.name}</td>
+            <td>$${pokemon.price}</td>
+            <td><button class="bg-red-600 text-white text-center p-4 rounded-md" onClick="deleteToCart(${pokemon.id})">Eliminar</button></td>
+            </tr>
+        </tbody>
+    </table>
+    `      
+});
+    contentHTML += `<table>
+    <tbody>
+        <tr class="grid grid-cols-4 place-items-center">
+        <td></td>
+        <td class="col-span-1">Total</td>
+        <td>$${cartTotalPrice()}</td>
+        <td></td>
+        </tr>
+    </tbody>
+    </table>`;
+
     document.getElementById("cart").innerHTML = contentHTML;
 }
+
