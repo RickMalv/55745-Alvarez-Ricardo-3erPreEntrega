@@ -19,7 +19,7 @@
     </script>
 </head>
 <body class="font-principal dark:bg-slate-950 dark:text-white">
-    <div class="sticky top-0  dark:bg-slate-950 dark:text-white">
+    <div class="sticky top-0 bg-white  dark:bg-slate-950 dark:text-white z-50">
         <nav class="h-20 w-[90%] mx-auto flex overflow-hidden items-center justify-between bg-white dark:bg-slate-950">
             <a class="w-1/3 max-w-[140px]" href="../../index.html">
                 <img class="w-full" src="../img/Logo.webp" alt="Pokemon">
@@ -47,74 +47,34 @@
     </div>
     <div class="flex justify-center shadow-md">
         <ul class="flex gap-4 md:w-[70%] flex-wrap justify-center p-4">
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl dark:border-white dark:border-2 " id="ver-todos">Ver todos</button></li> 
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-normal" id="normal">Normal</button></li>
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-fire" id="fire">Fire</button></li>
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-water text-white" id="water">Water</button></li>
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-grass" id="grass">Grass</button></li>
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-electric" id="electric">Electric</button></li>
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-ice" id="ice">Ice</button></li>
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-fighting text-white" id="fighting">Fighting</button></li>
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-poison text-white" id="poison">Poison</button></li>
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-ground" id="ground">Ground</button></li>
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-flying" id="flying">Flying</button></li>
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-psychic" id="psychic">Psychic</button></li>
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-bug" id="bug">Bug</button></li>
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-rock" id="rock">Rock</button></li>
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-ghost text-white" id="ghost">Ghost</button></li>
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-dark text-white" id="dark">Dark</button></li>
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-dragon text-white" id="dragon">Dragon</button></li>
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-steel" id="steel">Steel</button></li>
-            <li class="nav-item"><button class="text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-fairy" id="fairy">Fairy</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl dark:border-white dark:border-2 " id="ver-todos">Ver todos</button></li> 
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-normal" id="normal">Normal</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-fire" id="fire">Fire</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-water text-white" id="water">Water</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-grass" id="grass">Grass</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-electric" id="electric">Electric</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-ice" id="ice">Ice</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-fighting text-white" id="fighting">Fighting</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-poison text-white" id="poison">Poison</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-ground" id="ground">Ground</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-flying" id="flying">Flying</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-psychic" id="psychic">Psychic</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-bug" id="bug">Bug</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-rock" id="rock">Rock</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-ghost text-white" id="ghost">Ghost</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-dark text-white" id="dark">Dark</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-dragon text-white" id="dragon">Dragon</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-steel" id="steel">Steel</button></li>
+            <li class="nav-item"><button class="boton-header text-sm p-3 uppercase shadow-xl rounded-full hover:scale-110 hover:shadow-2xl bg-fairy" id="fairy">Fairy</button></li>
         </ul>
     </div>
     <div>
-        <div class="pokemon-todos p-4 grid grid-cols-2" id="listaPokemon">
-            <div class="pokemon">
-                <p class="pokemon-id-back">#025</p>
-                <div class="pokemon-imagen w-full max-w-[14rem]">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu">
-                </div>
-                <div class="pokemon-info">
-                    <div class="nombre-contenedor">
-                        <p class="pokemon-id">#025</p>
-                        <h2 class="pokemon-nombre">Pikachu</h2>
-                    </div>
-                    <div class="pokemon-tipos">
-                        <p class="electric tipo">ELECTRIC</p>
-                        <p class="fighting tipo">FIGHTING</p>
-                    </div>
-                    <div class="pokemon-stats">
-                        <p class="stat">4m</p>
-                        <p class="stat">60kg</p>
-                    </div>
-                </div>
-            </div>
-            <div class="pokemon">
-                <p class="pokemon-id-back">#025</p>
-                <div class="pokemon-imagen w-full max-w-[14rem]">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu">
-                </div>
-                <div class="pokemon-info">
-                    <div class="nombre-contenedor">
-                        <p class="pokemon-id">#025</p>
-                        <h2 class="pokemon-nombre">Pikachu</h2>
-                    </div>
-                    <div class="pokemon-tipos">
-                        <p class="electric tipo">ELECTRIC</p>
-                        <p class="fighting tipo">FIGHTING</p>
-                    </div>
-                    <div class="pokemon-stats">
-                        <p class="stat">4m</p>
-                        <p class="stat">60kg</p>
-                    </div>
-                </div>
-            </div>
+        <div class="pokemon-todos p-4 grid grid-cols-1 md:grid-cols-3 place-items-center gap-4 isolate -z-10 max-w-5xl m-auto " id="listaPokemon">
         </div>
     </div>  
     </div>
     <script src="../../dark-theme.js"></script>
-    <script src="../../functions.js"></script>
-    <script src="../../cart.js"></script>
+    <script src="../../pokedex.js"></script>
+
 </body>
 </html>
