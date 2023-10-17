@@ -46,8 +46,6 @@ function mostrarPokemon(pokemon){
 
 botonesHeader.forEach(boton => boton.addEventListener("click", (event) => {
     const botonId = event.currentTarget.id;
-    console.log(botonId)
-
     listaPokemon.innerHTML = "";
 
     for (let i = 1; i <= 151; i++) {
