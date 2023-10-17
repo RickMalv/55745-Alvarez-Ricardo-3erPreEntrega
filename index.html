@@ -29,7 +29,7 @@
             <div class="fixed inset-0 z-40 bg-gradient-to-b from-white/70 to-black/70 translate-x-full peer-checked:translate-x-0 transition-all md:static md:bg-none md:translate-x-0">
                 <ul class=" absolute inset-x-0 top-24 p-12  w-[90%] bg-white mx-auto rounded-md h-max justify-items-center grid items-center gap-6 shadow-2xl md:shadow-none md:w-max md:bg-transparent md:p-0 md:grid-flow-col md:static dark:bg-slate-950">
                     <li><a href="./src/pages/pokedex.html">Pokédex</a></li>
-                    <div class="flex items-center">
+                    <div class="flex items-center cursor-pointer">
                             <span class="md:hidden">Cambiar tema</span>
                             <img class="w-[50px] object-cover moon" src="./src/img/lunatone.webp" alt="moon">
                             <img class="w-[50px]  object-cover sun" src="./src/img/solrock.webp" alt="sun">
@@ -49,11 +49,11 @@
             </div>
         </div>
     </div>
-    <script type="module" src="main.js"></script>
-    <script src="dark-theme.js"></script>
+    <footer class="h-20 w-[90%] mx-auto py-4 flex flex-col overflow-hidden items-center justify-between bg-white dark:bg-slate-950">
+        <div>The Pokémon Company ⓒ</div>
+        <a class="underline" href="./src/pages/pokedex.html">Pokédex</a>
+    </footer>
 </body>
-<footer class="h-20 w-[90%] mx-auto py-4 flex flex-col overflow-hidden items-center justify-between bg-white dark:bg-slate-950">
-    <div>The Pokémon Company ⓒ</div>
-    <a class="underline" href="./src/pages/pokedex.html">Pokédex</a>
-</footer>
+<script type="module" src="main.js"></script>
+<script src="dark-theme.js"></script>
 </html>
