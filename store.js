@@ -1,3 +1,0 @@
-savePokemonsLS(pokemons);
-renderPokemons();
-renderCartQuantity();

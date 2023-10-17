@@ -29,13 +29,6 @@
             <div class="fixed inset-0 z-40 bg-gradient-to-b from-white/70 to-black/70 translate-x-full peer-checked:translate-x-0 transition-all md:static md:bg-none md:translate-x-0">
                 <ul class=" absolute inset-x-0 top-24 p-12  w-[90%] bg-white mx-auto rounded-md h-max justify-items-center grid items-center gap-6 shadow-2xl md:shadow-none md:w-max md:bg-transparent md:p-0 md:grid-flow-col md:static dark:bg-slate-950">
                     <li><a href="./src/pages/pokedex.html">Pokédex</a></li>
-                    <li><a href="./src/pages/store.html">Tienda</a></li>
-                    <li><a href="#">Carrito</a></li>
-                    <li>
-                        <div class="bg-red-600 rounded-full w-9 h-9 flex justify-center items-center">
-                            <span class="text-center" id="totalCartQuantity"></span>
-                        </div>
-                    </li>
                     <div class="flex items-center">
                             <span class="md:hidden">Cambiar tema</span>
                             <img class="w-[50px] object-cover moon" src="./src/img/lunatone.webp" alt="moon">
@@ -51,13 +44,16 @@
             <h1>¡Bienvenido al mundo Pokémon! Descubre criaturas asombrosas, resuelve misterios y libra batallas épicas. ¿Listo para comenzar la aventura?</h1>
             <div class="flex place-items-center justify-center">
                 <img class="w-8 h-6 pl-2 animate-bounce" src="./src/img/arrow-right.png" alt="arrow">
-                <button class="bg-red-600 text-white block w-max p-4 rounded-md "> Empezar Aventura</button>
+                <a href="./src/pages/pokedex.html" class="bg-red-600 text-white block w-max p-4 rounded-md ">Empezar Aventura</a>
                 <img class="w-8 h-6 animate-bounce pr-2" src="./src/img/arrow-left.png" alt="arrow">
             </div>
         </div>
     </div>
     <script type="module" src="main.js"></script>
     <script src="dark-theme.js"></script>
-    <script src="functions.js"></script>
 </body>
+<footer class="h-20 w-[90%] mx-auto py-4 flex flex-col overflow-hidden items-center justify-between bg-white dark:bg-slate-950">
+    <div>The Pokémon Company ⓒ</div>
+    <a class="underline" href="./src/pages/pokedex.html">Pokédex</a>
+</footer>
 </html>
